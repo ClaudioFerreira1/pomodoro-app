@@ -1,6 +1,11 @@
 const Controllers = () => {
+
   return (
-    <h1>Controllers</h1>
+    <div className="controllers-div">
+      <button className="btn button-selected">Pomodoro</button>
+      <button className="btn">Short break</button>
+      <button className="btn">Long break</button>
+    </div>
   )
 }
 
