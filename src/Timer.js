@@ -4,7 +4,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useGlobalContext } from './context';
 
 const Timer = () => {
-  const { selectedFont } = useGlobalContext();
+  const { selectedFont, actionText } = useGlobalContext();
 
   if (selectedFont === 'Kumbh Sans') {
     var marginValue = 20;
@@ -21,28 +21,31 @@ const Timer = () => {
   }
 
   return (
-    <div className="main-div-timer">
-      <div className="second-circle">
-        <div className="progress-bar">
-          <CircularProgressbarWithChildren
-            value={82}
-            strokeWidth={4}
-            // text="17:59"
-            styles={{
-              path: {
-                stroke: "#F87070",
-              },
-              trail: {
-                stroke: "transparent",
-              },
-            }}>
-            <div style={{ fontFamily: selectedFont, fontStyle: "normal", fontWeight: 'bold', fontSize: fontSizeForFont, textAlign: 'center', letterSpacing: letterSpace, color: "#D7E0FF", marginTop: marginValue }}>
-              17:59
-            </div>
-          </CircularProgressbarWithChildren>
+    <>
+      <button className='action-text-div'>{actionText}</button>
+      <div className="main-div-timer">
+        <div className="second-circle">
+          <div className="progress-bar">
+            <CircularProgressbarWithChildren
+              value={82}
+              strokeWidth={4}
+              // text="17:59"
+              styles={{
+                path: {
+                  stroke: "#F87070",
+                },
+                trail: {
+                  stroke: "transparent",
+                },
+              }}>
+              <div style={{ fontFamily: selectedFont, fontStyle: "normal", fontWeight: 'bold', fontSize: fontSizeForFont, textAlign: 'center', letterSpacing: letterSpace, color: "#D7E0FF", marginTop: marginValue }}>
+                17:59
+              </div>
+            </CircularProgressbarWithChildren>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

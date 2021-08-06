@@ -26,6 +26,7 @@ body {
   background: var(--clr-background-color);
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 
 :root {
@@ -79,9 +80,9 @@ h4 {
   text-transform: uppercase;
 }
 
-div#root {
+/* div#root {
   width: 100vw;
-}
+} */
 
 img.logo {
   margin-top: 4.8rem;
@@ -162,6 +163,45 @@ div.second-circle {
 div.progress-bar {
   width: 33.5rem;
   height: 33.5rem;
+}
+
+button.action-text-div {
+  background-color: transparent;
+  position: absolute;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 1.5rem;
+  color: var(--clr-grey);
+  margin-left: 15rem;
+  margin-top: 32.7rem;
+}
+
+button.action-text-div:hover {
+  color: var(--clr-orange)
+}
+
+div.config-div {
+  display: flex;
+  justify-content: center;
+  padding-top: 6.3rem;
+  padding-bottom: 5.6rem;
+}
+
+div.config-div img {
+  cursor: pointer;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+  transition: transform .7s ease-in-out;
+}
+
+div.config-div img:hover {
+  opacity: 0.65;
+  transform: rotate(360deg);
 }
 
 @media screen and (max-width: 440px) {

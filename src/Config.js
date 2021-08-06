@@ -1,6 +1,10 @@
+import iconSettings from "./assets/icon-settings.svg"
+
 const Config = () => {
   return (
-    <h1>Config</h1>
+    <div className="config-div">
+      <img src={iconSettings} alt="icon-settings" />
+    </div>
   )
 }
 

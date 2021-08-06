@@ -7,8 +7,9 @@ const AppProvider = ({ children }) => {
   const [shortBreak, setShortBreak] = useState(false);
   const [longBreak, setLongBreak] = useState(false);
   const [selectedFont, setSelectedFont] = useState('Kumbh Sans');
+  const [actionText, setActionText] = useState('START')
 
-  return <AppContext.Provider value={{ pomodoro, setPomodoro, shortBreak, setShortBreak, longBreak, setLongBreak, selectedFont }}>{children}</AppContext.Provider>
+  return <AppContext.Provider value={{ pomodoro, setPomodoro, shortBreak, setShortBreak, longBreak, setLongBreak, selectedFont, actionText }}>{children}</AppContext.Provider>
 }
 
 const useGlobalContext = () => {
