@@ -23,9 +23,9 @@ const Controllers = () => {
 
   return (
     <div className="controllers-div" id="test">
-      <button className={pomodoro ? "button-selected btn" : "btn"} onClick={() => handlePomodoro()} style={{ fontFamily: selectedFont }}>Pomodoro</button>
-      <button className={shortBreak ? "button-selected btn" : "btn"} onClick={() => handleShortBreak()} style={{ fontFamily: selectedFont }}>Short break</button>
-      <button className={longBreak ? "button-selected btn" : "btn"} onClick={() => handleLongBreak()} style={{ fontFamily: selectedFont }}>Long break</button>
+      <button className={pomodoro ? "button-selected btn" : "btn"} onClick={() => handlePomodoro()} style={{ fontFamily: selectedFont }}>pomodoro</button>
+      <button className={shortBreak ? "button-selected btn" : "btn"} onClick={() => handleShortBreak()} style={{ fontFamily: selectedFont }}>short break</button>
+      <button className={longBreak ? "button-selected btn" : "btn"} onClick={() => handleLongBreak()} style={{ fontFamily: selectedFont }}>long break</button>
     </div>
   )
 }
