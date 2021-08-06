@@ -4,14 +4,14 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useGlobalContext } from './context';
 
 const Timer = () => {
-  const { selectedFont, actionText } = useGlobalContext();
+  const { selectedFont, actionText, colorChoosed } = useGlobalContext();
 
   if (selectedFont === 'Kumbh Sans') {
-    var marginValue = 20;
+    var marginValue = 15;
     var letterSpace = -5;
     var fontSizeForFont = 100;
   } else if (selectedFont === 'Roboto Slab') {
-    var marginValue = -15;
+    var marginValue = -20;
     var letterSpace = 0;
     var fontSizeForFont = 105;
   } else if (selectedFont === 'Space Mono') {
@@ -22,7 +22,7 @@ const Timer = () => {
 
   return (
     <>
-      <button className='action-text-div'>{actionText}</button>
+      <button className='action-text-div' style={{ fontFamily: selectedFont }}>{actionText}</button>
       <div className="main-div-timer">
         <div className="second-circle">
           <div className="progress-bar">
@@ -32,7 +32,7 @@ const Timer = () => {
               // text="17:59"
               styles={{
                 path: {
-                  stroke: "#F87070",
+                  stroke: colorChoosed,
                 },
                 trail: {
                   stroke: "transparent",

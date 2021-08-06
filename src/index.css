@@ -173,12 +173,12 @@ button.action-text-div {
   cursor: pointer;
   font-style: normal;
   font-weight: bold;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   letter-spacing: 1.5rem;
   color: var(--clr-grey);
   margin-left: 15rem;
-  margin-top: 32.7rem;
+  margin-top: 33.2rem;
 }
 
 button.action-text-div:hover {
@@ -237,10 +237,32 @@ div.config-div img:hover {
   cursor: pointer;
   top: 0;
   right: 0;
-  margin-top: 3rem;
+  margin-top: 2.7rem;
   margin-right: 3rem;
   width: 1.8rem;
   height: 1.8rem;
+}
+
+.apply-button {
+  width: 14rem;
+  height: 5.3rem;
+  mix-blend-mode: normal;
+  border-radius: 2.65rem;
+  border: none;
+  left: 20rem;
+  color: var(--clr-white);
+  bottom: -2.6rem;
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  filter: brightness(1.1);
 }
 
 @media screen and (max-width: 800px) {
@@ -262,6 +284,17 @@ div.config-div img:hover {
 
   div.config-div {
     padding-top: 12rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .modal-container {
+    width: 32.7rem;
+    height: 54.9rem;
+  }
+
+  .apply-button {
+    left: 9.4rem;
   }
 }
 
