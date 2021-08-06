@@ -1,7 +1,7 @@
 import { useGlobalContext } from "./context"
 
 const Controllers = () => {
-  const { pomodoro, setPomodoro, shortBreak, setShortBreak, longBreak, setLongBreak } = useGlobalContext();
+  const { pomodoro, setPomodoro, shortBreak, setShortBreak, longBreak, setLongBreak, selectedFont } = useGlobalContext();
 
   const handlePomodoro = () => {
     setPomodoro(true);
@@ -23,9 +23,9 @@ const Controllers = () => {
 
   return (
     <div className="controllers-div" id="test">
-      <button className={pomodoro ? "button-selected btn" : "btn"} onClick={() => handlePomodoro()}>Pomodoro</button>
-      <button className={shortBreak ? "button-selected btn" : "btn"} onClick={() => handleShortBreak()}>Short break</button>
-      <button className={longBreak ? "button-selected btn" : "btn"} onClick={() => handleLongBreak()}>Long break</button>
+      <button className={pomodoro ? "button-selected btn" : "btn"} onClick={() => handlePomodoro()} style={{ fontFamily: selectedFont }}>Pomodoro</button>
+      <button className={shortBreak ? "button-selected btn" : "btn"} onClick={() => handleShortBreak()} style={{ fontFamily: selectedFont }}>Short break</button>
+      <button className={longBreak ? "button-selected btn" : "btn"} onClick={() => handleLongBreak()} style={{ fontFamily: selectedFont }}>Long break</button>
     </div>
   )
 }
