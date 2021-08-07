@@ -6,18 +6,23 @@ import { useGlobalContext } from './context';
 const Timer = () => {
   const { selectedFont, actionText, colorChoosed } = useGlobalContext();
 
+  let marginValue = 0;
+  let letterSpace = 0;
+  let fontSizeForFont = 0;
+
   if (selectedFont === 'Kumbh Sans') {
-    var marginValue = 15;
-    var letterSpace = -5;
-    var fontSizeForFont = 100;
+    marginValue = 15;
+    letterSpace = -5;
+    fontSizeForFont = 100;
+
   } else if (selectedFont === 'Roboto Slab') {
-    var marginValue = -20;
-    var letterSpace = 0;
-    var fontSizeForFont = 105;
+    marginValue = -20;
+    letterSpace = 0;
+    fontSizeForFont = 105;
   } else if (selectedFont === 'Space Mono') {
-    var marginValue = -15;
-    var letterSpace = -5;
-    var fontSizeForFont = 95;
+    marginValue = -15;
+    letterSpace = -5;
+    fontSizeForFont = 95;
   }
 
   return (

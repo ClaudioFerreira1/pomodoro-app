@@ -3,15 +3,16 @@ import React, { useState, useContext } from 'react'
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [pomodoro, setPomodoro] = useState(true);
-  const [shortBreak, setShortBreak] = useState(false);
-  const [longBreak, setLongBreak] = useState(false);
+  const [selectedController, setSelectedController] = useState('pomodoro')
+  const [pomodoroTime, setPomodoroTime] = useState('25')
+  const [shortBreakTime, setShortBreakTime] = useState('5')
+  const [longBreakTime, setLongBreakTime] = useState('15')
   const [selectedFont, setSelectedFont] = useState('Kumbh Sans');
   const [actionText, setActionText] = useState('PAUSE');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const [colorChoosed, setColorChoosed] = useState("#F87070")
 
-  return <AppContext.Provider value={{ pomodoro, setPomodoro, shortBreak, setShortBreak, longBreak, setLongBreak, selectedFont, actionText, isModalOpen, setIsModalOpen, colorChoosed }}>{children}</AppContext.Provider>
+  return <AppContext.Provider value={{ selectedController, setSelectedController, selectedFont, actionText, isModalOpen, setIsModalOpen, colorChoosed, pomodoroTime, shortBreakTime, longBreakTime }}>{children}</AppContext.Provider>
 }
 
 const useGlobalContext = () => {
