@@ -255,7 +255,7 @@ div.config-div img:hover {
 header.header-modal {
   width: 100%;
   height: 9rem;
-  border-bottom: #E3E1E1 solid 0.1rem;
+  border-bottom: rgba(22, 25, 50, 0.1) solid 0.1rem;
 }
 
 header.header-modal h2 {
@@ -272,7 +272,7 @@ div.main-div-modal {
   margin-top: 2.4rem;
 }
 
-h4.main-title-modal {
+p.subtitle-modal {
   font-style: normal;
   font-weight: bold;
   font-size: 1.3rem;
@@ -288,6 +288,7 @@ div.div-controllers-modal {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: rgba(22, 25, 50, 0.1) solid 0.1rem;
 }
 
 div.div-controllers-modal div {
@@ -317,7 +318,7 @@ div.div-controllers-modal div h5 {
   line-height: 1.4rem;
   padding-left: 1.6rem;
   padding-top: 0.3rem;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 #input-number-modal::-webkit-outer-spin-button,
@@ -351,6 +352,42 @@ input[type=number] {
 
 .dissapear {
   visibility: hidden;
+}
+
+.div-font {
+  width: 100%;
+  height: 8.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: rgba(22, 25, 50, 0.1) solid 0.1rem;
+}
+
+
+.div-font-buttons button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin-left: 1.6rem;
+  background-color: var(--clr-second-white);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: rgba(30, 33, 63, 0.73);
+  mix-blend-mode: normal;
+  border: 0.3rem solid #FFF;
+}
+
+div.div-font-buttons button:hover {
+  box-shadow: 0 0 0.3rem rgb(158, 157, 157);
+}
+
+div.div-font-buttons button.selected {
+  background-color: var(--clr-darker-purple);
+  color: var(--clr-white);
 }
 
 @media screen and (max-width: 800px) {

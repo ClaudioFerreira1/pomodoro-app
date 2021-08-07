@@ -5,7 +5,7 @@ import arrowDown from './assets/icon-arrow-down.svg';
 
 
 const Modal = () => {
-  const { isModalOpen, setIsModalOpen, colorChoosed, selectedFont, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime } = useGlobalContext();
+  const { isModalOpen, setIsModalOpen, colorChoosed, selectedFont, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont } = useGlobalContext();
 
 
 
@@ -19,7 +19,7 @@ const Modal = () => {
 
         <main>
           <div className="main-div-modal">
-            <h4 style={{ fontFamily: selectedFont }} className="main-title-modal">TIME (MINUTES)</h4>
+            <p style={{ fontFamily: selectedFont }} className="subtitle-modal">TIME (MINUTES)</p>
             <div className="div-controllers-modal" style={{ fontFamily: selectedFont }}>
               <div>
                 <h5>pomodoro</h5>
@@ -46,8 +46,21 @@ const Modal = () => {
                 </div>
               </div>
             </div>
-            <div>FONT</div>
-            <div>COLOR</div>
+            <div className="div-font">
+              <p className="subtitle-modal" style={{ fontFamily: selectedFont }}>
+                FONT
+              </p>
+              <div className="div-font-buttons">
+                <button className={selectedFont === 'Kumbh Sans' ? "selected" : ""} onClick={() => setSelectedFont('Kumbh Sans')}>Aa</button>
+                <button className={selectedFont === 'Roboto Slab' ? "selected" : ""} style={{ fontFamily: 'Roboto Slab' }} onClick={() => setSelectedFont('Roboto Slab')}>Aa</button>
+                <button className={selectedFont === 'Space Mono' ? "selected" : ""} style={{ fontFamily: 'Space Mono' }} onClick={() => setSelectedFont('Space Mono')}>Aa</button>
+              </div>
+            </div>
+            <div>
+              <p className="subtitle-modal" style={{ fontFamily: selectedFont }}>
+                COLOR
+              </p>
+            </div>
           </div>
           <button className="apply-button" style={{ backgroundColor: colorChoosed, fontFamily: selectedFont }}>Apply</button>
         </main>
