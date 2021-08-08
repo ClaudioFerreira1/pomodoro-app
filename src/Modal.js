@@ -19,7 +19,7 @@ const Modal = () => {
 
         <main>
           <div className="main-div-modal">
-            <p style={{ fontFamily: selectedFont }} className="subtitle-modal">TIME (MINUTES)</p>
+            <p style={{ fontFamily: selectedFont }} className="subtitle-modal main-title">TIME (MINUTES)</p>
             <div className="div-controllers-modal" style={{ fontFamily: selectedFont }}>
               <div>
                 <h5>pomodoro</h5>

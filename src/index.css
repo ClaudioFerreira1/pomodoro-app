@@ -309,6 +309,8 @@ div.div-controllers-modal div {
   font-style: normal;
   font-weight: bold;
   color: var(--clr-background-color);
+  display: flex;
+  flex-direction: column;
 }
 
 div.div-controllers-modal div h5 {
@@ -348,8 +350,9 @@ input[type=number] {
   flex-direction: column;
   position: absolute;
   row-gap: 0.5rem;
-  margin-top: -3.5rem;
+  margin-top: 3.3rem;
   margin-left: 10.2rem;
+  z-index: 10;
 }
 
 .arrows-input-div img {
@@ -371,6 +374,7 @@ input[type=number] {
   height: 8.8rem;
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -463,6 +467,65 @@ div.color-selector span {
 
   .apply-button {
     left: 9.4rem;
+  }
+
+  div.main-div-modal {
+    width: 28rem;
+    margin-left: 2.4rem;
+  }
+
+  div.div-controllers-modal {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 17.8rem;
+    width: 28rem;
+    flex-direction: column;
+  }
+
+  div.div-controllers-modal div {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+
+  #input-number-modal {
+    height: 4rem;
+    width: 14rem;
+    margin-left: 2.5rem;
+    margin-top: -0.5rem;
+  }
+
+  p.subtitle-modal {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+
+  div.div-controllers-modal div h5 {
+    width: 6.5rem;
+    margin-right: 5rem;
+  }
+
+  div.div-controllers-modal div.arrows-input-div {
+    flex-direction: column;
+    margin-top: 4.2rem;
+    margin-left: 9.1rem;
+    row-gap: 0.6rem;
+  }
+
+  .sub-div {
+    flex-direction: column;
+    justify-content: unset;
+    row-gap: 1.3rem;
+    margin-top: 2rem;
+    margin-left: -0.5rem;
+  }
+
+  .sub-div p {
+    margin-left: 2rem;
+  }
+
+  p.main-title {
+    margin-left: 7rem;
   }
 }
 
