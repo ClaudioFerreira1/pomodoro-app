@@ -5,7 +5,7 @@ import arrowDown from './assets/icon-arrow-down.svg';
 
 
 const Modal = () => {
-  const { isModalOpen, setIsModalOpen, colorChoosed, selectedFont, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont } = useGlobalContext();
+  const { isModalOpen, setIsModalOpen, colorChoosed, selectedFont, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont, setColorChoosed } = useGlobalContext();
 
 
 
@@ -46,20 +46,37 @@ const Modal = () => {
                 </div>
               </div>
             </div>
-            <div className="div-font">
+            <div className="sub-div border-bottom">
               <p className="subtitle-modal" style={{ fontFamily: selectedFont }}>
                 FONT
               </p>
-              <div className="div-font-buttons">
+              <div className="sub-div-buttons">
                 <button className={selectedFont === 'Kumbh Sans' ? "selected" : ""} onClick={() => setSelectedFont('Kumbh Sans')}>Aa</button>
                 <button className={selectedFont === 'Roboto Slab' ? "selected" : ""} style={{ fontFamily: 'Roboto Slab' }} onClick={() => setSelectedFont('Roboto Slab')}>Aa</button>
                 <button className={selectedFont === 'Space Mono' ? "selected" : ""} style={{ fontFamily: 'Space Mono' }} onClick={() => setSelectedFont('Space Mono')}>Aa</button>
               </div>
             </div>
-            <div>
+            <div className="sub-div">
               <p className="subtitle-modal" style={{ fontFamily: selectedFont }}>
                 COLOR
               </p>
+              <div className="sub-div-buttons color-selector">
+                <button onClick={() => setColorChoosed("#F87070")}>
+                  <span className={colorChoosed === "#F87070" ? "material-icons-two-tone" : "dissapear"}>
+                    check
+                  </span>
+                </button>
+                <button onClick={() => setColorChoosed("#70F3F8")}>
+                  <span className={colorChoosed === "#70F3F8" ? "material-icons-two-tone" : "dissapear"}>
+                    check
+                  </span>
+                </button>
+                <button onClick={() => setColorChoosed("#D881F8")}>
+                  <span className={colorChoosed === "#D881F8" ? "material-icons-two-tone" : "dissapear"}>
+                    check
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
           <button className="apply-button" style={{ backgroundColor: colorChoosed, fontFamily: selectedFont }}>Apply</button>

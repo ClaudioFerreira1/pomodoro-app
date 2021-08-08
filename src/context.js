@@ -9,10 +9,10 @@ const AppProvider = ({ children }) => {
   const [longBreakTime, setLongBreakTime] = useState(15)
   const [selectedFont, setSelectedFont] = useState('Kumbh Sans');
   const [actionText, setActionText] = useState('PAUSE');
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [colorChoosed, setColorChoosed] = useState("#F87070")
 
-  return <AppContext.Provider value={{ selectedController, setSelectedController, selectedFont, actionText, isModalOpen, setIsModalOpen, colorChoosed, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont }}>{children}</AppContext.Provider>
+  return <AppContext.Provider value={{ selectedController, setSelectedController, selectedFont, actionText, isModalOpen, setIsModalOpen, colorChoosed, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont, setColorChoosed }}>{children}</AppContext.Provider>
 }
 
 const useGlobalContext = () => {

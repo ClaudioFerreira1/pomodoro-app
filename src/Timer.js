@@ -44,7 +44,7 @@ const Timer = () => {
                 },
               }}>
               <div className="div-timer" style={{ fontFamily: selectedFont, fontStyle: "normal", fontWeight: 'bold', fontSize: fontSizeForFont, textAlign: 'center', letterSpacing: letterSpace, color: "#D7E0FF", marginTop: marginValue }}>
-                17:59
+                17:39
               </div>
             </CircularProgressbarWithChildren>
           </div>
