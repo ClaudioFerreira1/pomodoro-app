@@ -8,7 +8,7 @@ const AppProvider = ({ children }) => {
   const [shortBreakTime, setShortBreakTime] = useState(5)
   const [longBreakTime, setLongBreakTime] = useState(15)
   const [selectedFont, setSelectedFont] = useState('Kumbh Sans');
-  const [actionText, setActionText] = useState('PAUSE');
+  const [actionText, setActionText] = useState('START');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [colorChoosed, setColorChoosed] = useState("#F87070")
 

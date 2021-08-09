@@ -2,6 +2,7 @@
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useGlobalContext } from './context';
+import Clock from './Clock'
 
 const Timer = () => {
   const { selectedFont, actionText, colorChoosed } = useGlobalContext();
@@ -14,7 +15,6 @@ const Timer = () => {
     marginValue = 15;
     letterSpace = -5;
     fontSizeForFont = 100;
-
   } else if (selectedFont === 'Roboto Slab') {
     marginValue = -20;
     letterSpace = 0;
@@ -44,7 +44,7 @@ const Timer = () => {
                 },
               }}>
               <div className="div-timer" style={{ fontFamily: selectedFont, fontStyle: "normal", fontWeight: 'bold', fontSize: fontSizeForFont, textAlign: 'center', letterSpacing: letterSpace, color: "#D7E0FF", marginTop: marginValue }}>
-                17:39
+                <Clock />
               </div>
             </CircularProgressbarWithChildren>
           </div>
