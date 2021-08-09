@@ -5,7 +5,7 @@ import { useGlobalContext } from './context';
 import Clock from './Clock'
 
 const Timer = () => {
-  const { selectedFont, actionText, colorChoosed } = useGlobalContext();
+  const { selectedFont, actionText, colorChoosed, setClockStatus, setActionText, setSecondsRemaining, selectedController, pomodoroTime, shortBreakTime, longBreakTime } = useGlobalContext();
 
   let marginValue = 0;
   let letterSpace = 0;
@@ -25,9 +25,29 @@ const Timer = () => {
     fontSizeForFont = 95;
   }
 
+  const handleAction = () => {
+    if (actionText === 'START') {
+      setClockStatus('Started')
+      setActionText('PAUSE')
+    } else if (actionText === "PAUSE") {
+      setClockStatus('Stopped')
+      setActionText('START')
+    } else if (actionText === "RESTART") {
+      setClockStatus('Stopped')
+      if (selectedController === "pomodoro") {
+        setSecondsRemaining(pomodoroTime * 60)
+      } else if (selectedController === "short break") {
+        setSecondsRemaining(shortBreakTime * 60)
+      } else if (selectedController === "long break") {
+        setSecondsRemaining(longBreakTime * 60)
+      }
+      setActionText('START')
+    }
+  }
+
   return (
     <>
-      <button className='action-text-div' style={{ fontFamily: selectedFont }}>{actionText}</button>
+      <button className={`${colorChoosed.replace('#', 'A')} action-text-div`} style={{ fontFamily: selectedFont }} onClick={() => handleAction()}>{actionText}</button>
       <div className="main-div-timer">
         <div className="second-circle">
           <div className="progress-bar">

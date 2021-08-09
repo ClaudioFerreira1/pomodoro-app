@@ -180,8 +180,16 @@ button.action-text-div {
   margin-top: 33.2rem;
 }
 
-button.action-text-div:hover {
+button.AF87070:hover {
   color: var(--clr-orange)
+}
+
+button.A70F3F8:hover {
+  color: var(--clr-green);
+}
+
+button.AD881F8:hover {
+  color: var(--clr-purple);
 }
 
 div.config-div {
