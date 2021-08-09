@@ -9,9 +9,12 @@ export default function Clock() {
   const minutesToDisplay = minutesRemaining % 60
   const hoursToDisplay = (minutesRemaining - minutesToDisplay) / 60
 
-  if (twoDigits(minutesToDisplay) === "00" && twoDigits(secondsToDisplay) === "00" && hoursToDisplay !== 1) {
-    setActionText("RESTART")
-  }
+
+  useEffect(() => {
+    if (twoDigits(minutesToDisplay) === "00" && twoDigits(secondsToDisplay) === "00" && hoursToDisplay !== 1) {
+      setActionText("RESTART")
+    }
+  });
 
   useInterval(
     () => {

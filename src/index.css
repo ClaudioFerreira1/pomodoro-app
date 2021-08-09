@@ -177,6 +177,7 @@ button.action-text-div {
   letter-spacing: 1.5rem;
   color: var(--clr-grey);
   margin-top: 33.2rem;
+  margin-left: 15rem;
 }
 
 button.AF87070:hover {
@@ -444,6 +445,15 @@ div.color-selector span {
   margin-left: -1.15rem;
 }
 
+button#RESTART {
+  margin-left: 12.5rem;
+}
+
+/* div.controllers-div button.START,
+div.controllers-div button.PAUSE {
+  margin-left: 15rem;
+} */
+
 @media screen and (max-width: 800px) {
   img.logo {
     margin-top: 7rem;
@@ -584,5 +594,18 @@ div.color-selector span {
   div.config-div {
     padding-top: 7.9rem;
     padding-bottom: 4.8rem;
+  }
+
+  #input-number-modal {
+    font-size: 1.25rem;
+  }
+
+  button#RESTART {
+    margin-left: 9rem;
+  }
+
+  div.controllers-div button.START,
+  div.controllers-div button.PAUSE {
+    margin-left: 11.2rem;
   }
 }
