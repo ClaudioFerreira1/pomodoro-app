@@ -2,31 +2,16 @@ import React, { useEffect, useRef } from 'react'
 import { useGlobalContext } from './context'
 
 export default function Clock() {
-  const { clockStatus, setClockStatus, setActionText, secondsRemaining, setSecondsRemaining, progressBarPercentage, setProgressBarPercentage, controllerName, pomodoroTime, shortBreakTime, longBreakTime } = useGlobalContext();
+  const { clockStatus, setClockStatus, setActionText, secondsRemaining, setSecondsRemaining } = useGlobalContext();
 
   const secondsToDisplay = secondsRemaining % 60
   const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60
   const minutesToDisplay = minutesRemaining % 60
   const hoursToDisplay = (minutesRemaining - minutesToDisplay) / 60
 
-  if (twoDigits(minutesToDisplay) === "00" && twoDigits(secondsToDisplay) === "00") {
+  if (twoDigits(minutesToDisplay) === "00" && twoDigits(secondsToDisplay) === "00" && hoursToDisplay !== 1) {
     setActionText("RESTART")
   }
-
-  // var initialProgressBar;
-  // let secondsRemainingInRelationToTotal;
-
-  // if (controllerName === "pomodoro") {
-  //   var initialProgressBar = pomodoroTime * 60;
-  // } else if (controllerName === "short break") {
-  //   var initialProgressBar = shortBreakTime * 60;
-  // } else if (controllerName === "long break") {
-  //   var initialProgressBar = longBreakTime * 60;
-  // }
-
-  // secondsRemainingInRelationToTotal = initialProgressBar / twoDigits(minutesToDisplay) * 60 + twoDigits(secondsToDisplay);
-
-  // console.log(initialProgressBar);
 
   useInterval(
     () => {

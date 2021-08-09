@@ -1,15 +1,15 @@
-/* eslint-disable no-redeclare */
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useGlobalContext } from './context';
 import Clock from './Clock'
 
 const Timer = () => {
-  const { selectedFont, actionText, colorChoosed, setClockStatus, setActionText, setSecondsRemaining, selectedController, pomodoroTime, shortBreakTime, longBreakTime } = useGlobalContext();
+  const { selectedFont, actionText, colorChoosed, setClockStatus, setActionText, setSecondsRemaining, selectedController, pomodoroTime, shortBreakTime, longBreakTime, secondsRemaining, progressBarPercentage } = useGlobalContext();
 
   let marginValue = 0;
   let letterSpace = 0;
   let fontSizeForFont = 0;
+  let marginLeftValue = 0;
 
   if (selectedFont === 'Kumbh Sans') {
     marginValue = 15;
@@ -23,6 +23,12 @@ const Timer = () => {
     marginValue = -15;
     letterSpace = -5;
     fontSizeForFont = 95;
+  }
+
+  if (actionText === "RESTART") {
+    marginLeftValue = 125;
+  } else {
+    marginLeftValue = 150;
   }
 
   const handleAction = () => {
@@ -47,14 +53,13 @@ const Timer = () => {
 
   return (
     <>
-      <button className={`${colorChoosed.replace('#', 'A')} action-text-div`} style={{ fontFamily: selectedFont }} onClick={() => handleAction()}>{actionText}</button>
+      <button className={`${colorChoosed.replace('#', 'A')} action-text-div`} style={{ fontFamily: selectedFont, marginLeft: marginLeftValue }} onClick={() => handleAction()}>{actionText}</button>
       <div className="main-div-timer">
         <div className="second-circle">
           <div className="progress-bar">
             <CircularProgressbarWithChildren
-              value={82}
+              value={(secondsRemaining / progressBarPercentage * 100).toFixed(1)}
               strokeWidth={4}
-              // text="17:59"
               styles={{
                 path: {
                   stroke: colorChoosed,

@@ -1,16 +1,19 @@
 import { useGlobalContext } from "./context"
 
 const Controllers = () => {
-  const { selectedFont, selectedController, setSelectedController, colorChoosed, setSecondsRemaining, pomodoroTime, shortBreakTime, longBreakTime, setClockStatus, setActionText } = useGlobalContext();
+  const { selectedFont, selectedController, setSelectedController, colorChoosed, setSecondsRemaining, pomodoroTime, shortBreakTime, longBreakTime, setClockStatus, setActionText, setProgressBarPercentage } = useGlobalContext();
 
   const changeControllerAndTime = (controllerName) => {
     setSelectedController(controllerName);
     if (controllerName === "pomodoro") {
       setSecondsRemaining(pomodoroTime * 60)
+      setProgressBarPercentage(pomodoroTime * 60)
     } else if (controllerName === "short break") {
       setSecondsRemaining(shortBreakTime * 60)
+      setProgressBarPercentage(shortBreakTime * 60)
     } else if (controllerName === "long break") {
       setSecondsRemaining(longBreakTime * 60)
+      setProgressBarPercentage(longBreakTime * 60)
     }
     setClockStatus('Stopped')
     setActionText('START')

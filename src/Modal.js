@@ -5,15 +5,18 @@ import arrowDown from './assets/icon-arrow-down.svg';
 
 
 const Modal = () => {
-  const { isModalOpen, setIsModalOpen, colorChoosed, selectedFont, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont, setColorChoosed, selectedController, setSecondsRemaining, setClockStatus, setActionText } = useGlobalContext();
+  const { isModalOpen, setIsModalOpen, colorChoosed, selectedFont, pomodoroTime, shortBreakTime, longBreakTime, setPomodoroTime, setShortBreakTime, setLongBreakTime, setSelectedFont, setColorChoosed, selectedController, setSecondsRemaining, setClockStatus, setActionText, setProgressBarPercentage } = useGlobalContext();
 
   const applyTimesAndCloseModal = () => {
     if (selectedController === "pomodoro") {
       setSecondsRemaining(pomodoroTime * 60)
+      setProgressBarPercentage(pomodoroTime * 60)
     } else if (selectedController === "short break") {
       setSecondsRemaining(shortBreakTime * 60)
+      setProgressBarPercentage(shortBreakTime * 60)
     } else if (selectedController === "long break") {
       setSecondsRemaining(longBreakTime * 60)
+      setProgressBarPercentage(longBreakTime * 60)
     }
     setClockStatus('Stopped')
     setActionText('START')
@@ -25,7 +28,7 @@ const Modal = () => {
       <section className='modal-container'>
         <header className='header-modal'>
           <h2 style={{ fontFamily: selectedFont }}>Settings</h2>
-          <img className="closing-icon" src={iconClose} onClick={() => { applyTimesAndCloseModal() }} alt="closing-icon" />
+          <img className="closing-icon" src={iconClose} onClick={() => { setIsModalOpen(false) }} alt="closing-icon" />
         </header>
 
         <main>

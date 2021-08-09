@@ -13,15 +13,18 @@ const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [colorChoosed, setColorChoosed] = useState("#F87070");
   const [secondsRemaining, setSecondsRemaining] = useState(1800);
-  const [progressBarPercentage, setProgressBarPercentage] = useState(100);
+  const [progressBarPercentage, setProgressBarPercentage] = useState(1800);
 
   const timeOfSelectedControler = () => {
     if (selectedController === "pomodoro") {
       setSecondsRemaining(pomodoroTime * 60)
+      setProgressBarPercentage(pomodoroTime * 60)
     } else if (selectedController === "short break") {
       setSecondsRemaining(shortBreakTime * 60)
+      setProgressBarPercentage(shortBreakTime * 60)
     } else if (selectedController === "long break") {
       setSecondsRemaining(longBreakTime * 60)
+      setProgressBarPercentage(shortBreakTime * 60)
     }
   }
 
