@@ -24,8 +24,8 @@ const Modal = () => {
   }
 
   return (
-    <div className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`}>
-      <section className='modal-container'>
+    <div className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`} onClick={() => setIsModalOpen(false)}>
+      <section className='modal-container' onClick={(e) => e.stopPropagation()}>
         <header className='header-modal'>
           <h2 style={{ fontFamily: selectedFont }}>Settings</h2>
           <img className="closing-icon" src={iconClose} onClick={() => { setIsModalOpen(false) }} alt="closing-icon" />
