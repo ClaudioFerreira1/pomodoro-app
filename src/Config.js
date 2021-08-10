@@ -6,7 +6,7 @@ const Config = () => {
 
   return (
     <div className="config-div">
-      <img src={iconSettings} alt="icon-settings" onClick={() => setIsModalOpen(true)} />
+      <img src={iconSettings} alt="icon-settings" role="button" onClick={() => setIsModalOpen(true)} />
     </div>
   )
 }

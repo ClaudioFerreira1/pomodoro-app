@@ -25,19 +25,19 @@ const Modal = () => {
 
   return (
     <div className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`} onClick={() => setIsModalOpen(false)}>
-      <section className='modal-container' onClick={(e) => e.stopPropagation()}>
+      <main className='modal-container' onClick={(e) => e.stopPropagation()}>
         <header className='header-modal'>
           <h2 style={{ fontFamily: selectedFont }}>Settings</h2>
           <img className="closing-icon" src={iconClose} onClick={() => { setIsModalOpen(false) }} alt="closing-icon" />
         </header>
 
-        <main>
+        <section>
           <div className="main-div-modal">
             <p style={{ fontFamily: selectedFont }} className="subtitle-modal main-title">TIME (MINUTES)</p>
             <div className="div-controllers-modal" style={{ fontFamily: selectedFont }}>
               <div>
                 <h5>pomodoro</h5>
-                <input id="input-number-modal" type="number" min="1" max="60" value={pomodoroTime} style={{ fontFamily: selectedFont }} readOnly />
+                <input className="input-number-modal" type="number" min="1" max="60" value={pomodoroTime} style={{ fontFamily: selectedFont }} readOnly />
                 <div className="arrows-input-div">
                   <img className={pomodoroTime === 60 ? "dissapear" : ""} src={arrowUp} alt="arrow-up" onClick={() => setPomodoroTime(pomodoroTime + 1)} />
                   <img className={pomodoroTime === 1 ? "dissapear" : ""} src={arrowDown} alt="arrow-down" onClick={() => setPomodoroTime(pomodoroTime - 1)} />
@@ -45,7 +45,7 @@ const Modal = () => {
               </div>
               <div>
                 <h5>short break</h5>
-                <input id="input-number-modal" type="number" min="1" max="99" step="1" value={shortBreakTime} style={{ fontFamily: selectedFont }} readOnly />
+                <input className="input-number-modal" type="number" min="1" max="99" step="1" value={shortBreakTime} style={{ fontFamily: selectedFont }} readOnly />
                 <div className="arrows-input-div">
                   <img className={shortBreakTime === 60 ? "dissapear" : ""} src={arrowUp} alt="arrow-up" onClick={() => setShortBreakTime(shortBreakTime + 1)} />
                   <img className={shortBreakTime === 1 ? "dissapear" : ""} src={arrowDown} alt="arrow-down" onClick={() => setShortBreakTime(shortBreakTime - 1)} />
@@ -53,7 +53,7 @@ const Modal = () => {
               </div>
               <div>
                 <h5>long break</h5>
-                <input id="input-number-modal" type="number" min="1" max="99" step="1" value={longBreakTime} style={{ fontFamily: selectedFont }} readOnly />
+                <input className="input-number-modal" type="number" min="1" max="99" step="1" value={longBreakTime} style={{ fontFamily: selectedFont }} readOnly />
                 <div className="arrows-input-div">
                   <img className={longBreakTime === 60 ? "dissapear" : ""} src={arrowUp} alt="arrow-up" onClick={() => setLongBreakTime(longBreakTime + 1)} />
                   <img className={longBreakTime === 1 ? "dissapear" : ""} src={arrowDown} alt="arrow-down" onClick={() => setLongBreakTime(longBreakTime - 1)} />
@@ -94,8 +94,8 @@ const Modal = () => {
             </div>
           </div>
           <button className="apply-button" style={{ backgroundColor: colorChoosed, fontFamily: selectedFont }} onClick={() => applyTimesAndCloseModal()}>Apply</button>
-        </main>
-      </section>
+        </section>
+      </main>
     </div>
   )
 }

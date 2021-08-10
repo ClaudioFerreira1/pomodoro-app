@@ -327,7 +327,7 @@ div.div-controllers-modal div h5 {
   opacity: 0.4;
 }
 
-#input-number-modal {
+.input-number-modal {
   width: 100%;
   height: 4.8rem;
   border: hidden;
@@ -343,8 +343,8 @@ div.div-controllers-modal div h5 {
   pointer-events: none;
 }
 
-#input-number-modal::-webkit-outer-spin-button,
-#input-number-modal::-webkit-inner-spin-button {
+.input-number-modal::-webkit-outer-spin-button,
+.input-number-modal::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -505,7 +505,7 @@ div.controllers-div button.PAUSE {
     align-items: center;
   }
 
-  #input-number-modal {
+  .input-number-modal {
     height: 4rem;
     width: 14rem;
     margin-left: 2.5rem;
@@ -596,7 +596,7 @@ div.controllers-div button.PAUSE {
     padding-bottom: 4.8rem;
   }
 
-  #input-number-modal {
+  .input-number-modal {
     font-size: 1.25rem;
   }
 

@@ -53,6 +53,7 @@ const Timer = () => {
             <CircularProgressbarWithChildren
               value={(secondsRemaining / progressBarPercentage * 100).toFixed(1)}
               strokeWidth={4}
+              role="figure"
               styles={{
                 path: {
                   stroke: colorChoosed,

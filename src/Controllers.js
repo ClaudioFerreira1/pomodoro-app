@@ -20,10 +20,10 @@ const Controllers = () => {
   }
 
   return (
-    <div className={`${colorChoosed.replace('#', 'A')} controllers-div`}>
-      <button className={selectedController === "pomodoro" ? "button-selected" : ""} onClick={() => changeControllerAndTime("pomodoro")} style={{ fontFamily: selectedFont }}>pomodoro</button>
-      <button className={selectedController === "short break" ? "button-selected" : ""} onClick={() => changeControllerAndTime("short break")} style={{ fontFamily: selectedFont }}>short break</button>
-      <button className={selectedController === "long break" ? "button-selected" : ""} onClick={() => changeControllerAndTime("long break")} style={{ fontFamily: selectedFont }}>long break</button>
+    <div className={`${colorChoosed.replace('#', 'A')} controllers-div`} role="group">
+      <button className={selectedController === "pomodoro" ? "button-selected" : ""} onClick={() => changeControllerAndTime("pomodoro")} style={{ fontFamily: selectedFont }} role="application">pomodoro</button>
+      <button className={selectedController === "short break" ? "button-selected" : ""} onClick={() => changeControllerAndTime("short break")} style={{ fontFamily: selectedFont }} role="application">short break</button>
+      <button className={selectedController === "long break" ? "button-selected" : ""} onClick={() => changeControllerAndTime("long break")} style={{ fontFamily: selectedFont }} role="application">long break</button>
     </div>
   )
 }
